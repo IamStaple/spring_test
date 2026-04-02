@@ -24,7 +24,7 @@ public class EnrichedUser {
     @Column(name = "department")
     private String department;
 
-    @Column(name = "lastUpdated")
+    @Column(name = "last_updated")
     private String lastUpdated;
 
     protected EnrichedUser() {}
@@ -36,7 +36,7 @@ public class EnrichedUser {
         this.lastUpdated = builder.lastUpdated;
     }
 
-    public Builder builder() {
+    public static Builder builder() {
         return new Builder();
     }
 
@@ -71,6 +71,10 @@ public class EnrichedUser {
         }
     }
 
+    public long getId() 
+    {
+        return this.id;
+    }
 
     public String getName() {
         return this.name;
